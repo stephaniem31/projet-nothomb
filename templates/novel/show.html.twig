@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ novel.title }}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="">
+        <div class="d-flex">
+            <img src="/build/images/{{novel.cover}}" alt="{{ novel.title }}" style="max-height:220px; max-width:150px;">
+            <h1>{{ novel.title }}</h1>
+        </div>
+    </div>
+    
+    <span class="text-decoration-underline fw-bold">Résumé : </span>
+    <p>{{novel.summary}}</p>
+
+    <span class="text-decoration-underline fw-bold">Année de publication : </span>
+    <p>{{novel.year}}</p>
+
+    {% if novel.award == true %}
+        <span class="text-decoration-underline fw-bold">Récompense(s) : </span>
+        <p>{{novel.award}}</p>
+    {% endif %}
+
+    {% if novel.movie == true and novel.play == true %}
+        <p>Ce livre a été adapté au cinéma et au théâtre</p>
+    {% endif %}
+
+    {% if novel.movie == true and novel.play == false %}
+        <p>Ce livre a été adapté au cinéma</p>
+    {% endif %}
+
+    {% if novel.play == true and novel.movie == false %}
+        <p>Ce livre a été adapté au théâtre</p>
+    {% endif %}
+
+    
+
+</div>
+
+<a href="{{ path('novel_index') }}" class="text-secondary">
+    Retour à la liste des romans
+</a>
+{% endblock %}
+

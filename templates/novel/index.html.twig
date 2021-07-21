@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Romans{% endblock %}
+
+{% block body %}
+
+<div class="container col-12">
+    <div class="row">
+
+        {% for novel in novels %}
+            <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+                <div class="card shadow my-3">
+                    <div class="d-flex justify-content-center mt-1">
+                        <a href="{{ path("novel_show", { id: novel.id }) }}">
+                            <img src="/build/images/{{novel.cover}}" class="card" alt="{{ novel.title }}" style="max-height:220px; max-width:150px;">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">"{{ novel.quote }}"</p>
+                        
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

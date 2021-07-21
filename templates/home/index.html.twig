@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'œuvre d'Amélie Nothomb{% endblock %}
+
+{% block body %}
+<h1 class="text-success text-center mt-5">Amélie Nothomb</h1>
+<div class="container">
+<div class="d-flex mt-5">
+    <p>Amélie Nothomb est une romancière belge née 13 août 1967 à Kobé au Japon. Ses livres font partie des meilleures ventes littéraires 
+    parmi le public francophone et certains sont traduits en plusieurs langues. Ce succès est en partie dû à son attachement à la culture nippone,
+    retranscrit dans plusieurs de ses romans, et à son style d'écriture excentrique. Ces derniers lui ont valu de nombreux prix et distinctions,
+    notamment le Grand Prix Jean Giono en 2008 pour l'ensemble de son œuvre.
+    </p>
+    <img src="/build/images/Amelie-Nothomb.jpg"/>
+    </div>
+    <div class="mt-5">
+    <h3>Les débuts de l'écrivain</h3>
+    <p>Amélie Nothomb naît en 1967 à Kobé au Japon, de parents bruxellois. Fille du diplomate Patrick Nothomb, l'auteure passe les cinq 
+    premières années de son enfance au Japon. Puis elle voyagera entre New-York, Pékin, le Laos et le Bangladesh, au gré des affectations 
+    de son père.
+    En 1984, l'écrivain part s'installer en Belgique pour effectuer des études de philologie romane à Bruxelles. Différente de ses camarades 
+    occidentales par son passé multiculturel, elle trouve refuge dans l'écriture. En parallèle à ses études, elle s'adonne à cette nouvelle 
+    passion mais sans la dévoiler au public.
+    Une fois son diplôme obtenu, elle décide de repartir dans son pays de naissance afin d'exercer le métier d'interprète au sein d'une 
+    entreprise japonaise de Tokyo. Elle continue d'écrire en même temps et, en 1992, publie enfin son premier roman : 
+    <a href="{{ path("novel_show", { id: 1 }) }}" class="text-dark text-decoration-none"><strong>Hygiène de l'assassin</strong></a>. 
+    Le public est immédiatement séduit par l'originalité de son histoire (relatant la fin de vie d'un célèbre romancier misanthrope obèse, 
+    misogyne et atteint d'un cancer du cartilage).
+    L'engouement est tel qu'une adaptation cinématographique est programmée la même année. Le film sortira en 1999, d'après une réalisation 
+    de François Ruggieri.
+    </p>
+    <h3 class="mt-5">Amélie Nothomb : ses œuvres phares</h3>
+    <p>Face au succès généré par son premier livre, Amélie Nothomb décide de se consacrer pleinement à l'écriture. Sa plume oscille entre 
+    deux styles d'ouvrages : le roman fictionnel et autobiographique. Pour son second roman, <a href="{{ path("novel_show", { id: 2 }) }}" 
+    class="text-dark text-decoration-none"><strong>Le sabotage amoureux</strong></a> (1993), l'auteure choisit la seconde catégorie : elle y 
+    raconte son enfance en Chine à l'âge de 7 ans et ses premières amours enfantines. Un 
+    voyage initiatique qui séduit le grand public. Mais c'est véritablement en 1999 que la carrière d'Amélie Nothomb fait un pas de géant. 
+    Elle publie <a href="{{ path("novel_show", { id: 7 }) }}" class="text-dark text-decoration-none"><strong>Stupeurs et tremblements
+    </strong></a>, basé sur son propre vécu au Japon. Elle relate son expérience de jeune femme employée au sein d'une entreprise régie par les 
+    codes stricts de la culture nippone.
+    Par la suite, Amélie Nothomb publie un grand nombre de livres qui font fureur auprès de son public. 
+    <a href="{{ path("novel_show", { id: 8 }) }}" class="text-dark text-decoration-none"><strong>Métaphysique des tubes</strong></a> (2000),
+    <a href="{{ path("novel_show", { id: 9 }) }}" class="text-dark text-decoration-none"><strong>Cosmétique de l'ennemi</strong></a> (2001),
+    <a href="{{ path("novel_show", { id: 10 }) }}" class="text-dark text-decoration-none"><strong>Robert des noms propres</strong></a> (2002),
+    <a href="{{ path("novel_show", { id: 13 }) }}" class="text-dark text-decoration-none"><strong>Acide sulfurique</strong></a> (2005) et 
+    <a href="{{ path("novel_show", { id: 15 }) }}" class="text-dark text-decoration-none"><strong>Ni d'Eve ni d'Adam</strong></a> (2007) font notamment partie de ses plus grands succès. La plupart 
+    d'entre eux s'inspirent de la vie d'Amélie Nothomb et de ses nombreux voyages à travers le monde.
+    </p>
+    </div>
+</div>
+{% endblock %}
