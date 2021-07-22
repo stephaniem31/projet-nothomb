@@ -4,4 +4,8 @@ body {
     background-color: $primary;
 }
 
+.content {
+    min-height: calc(100vh - 152px);
+}
+
 @import "~bootstrap/scss/bootstrap";

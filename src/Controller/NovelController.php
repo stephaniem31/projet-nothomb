@@ -89,16 +89,17 @@ class NovelController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", methods={"POST"}, name="delete")     
+     * @Route("/delete/{id}", name="delete", methods={"POST"})     
      */
     public function delete(Request $request, Novel $novel): Response
     {
         if ($this->isCsrfTokenValid('delete' . $novel->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
+            // $novel->setCover('');
             $entityManager->remove($novel);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('novel_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('novel_update', [], Response::HTTP_SEE_OTHER);
     }
 }

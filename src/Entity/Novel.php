@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\NovelRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=NovelRepository::class)
+ * @Vich\Uploadable
  */
 class Novel
 {
@@ -56,6 +59,12 @@ class Novel
      * @ORM\Column(type="string", length=255)
      */
     private $cover;
+
+    /**
+     * @Vich\UploadableField(mapping="cover_file", fileNameProperty="cover")
+     * @var File
+     */
+    private $coverFile;
 
 
     public function getId(): ?int
@@ -152,11 +161,21 @@ class Novel
         return $this->cover;
     }
 
-    public function setCover(string $cover): self
+    public function setCover(?string $cover): self
     {
         $this->cover = $cover;
 
         return $this;
     }
 
+    public function setCoverFile(File $image = null): Novel
+    {
+        $this->coverFile = $image;
+        return $this;
+    }
+
+    public function getCoverFile(): ?File
+    {
+        return $this->coverFile;
+    }
 }

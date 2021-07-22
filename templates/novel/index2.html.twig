@@ -7,7 +7,7 @@
 
     <a href="{{ path('novel_new') }}" class="text-primary btn btn-secondary mt-2 mb-5 ms-3">Ajouter un roman</a>
 
-    <div class="container">
+    <div class="mx-1">
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -27,15 +27,15 @@
             <tr>
                 <td>{{ novel.title }}</td>
                 <td>{{ novel.year }}</td>
-                <td>{{ novel.summary }}</td>
+                <td class="col-md-5">{{ novel.summary }}</td>
                 <td>{{ novel.movie ? 'Oui' : 'Non' }}</td>
                 <td>{{ novel.play ? 'Oui' : 'Non' }}</td>
                 <td>{{ novel.award }}</td>
                 <td>{{ novel.quote }}</td>
-                <td><img src="/build/images/{{novel.cover}}" alt="{{ novel.title }}" style="max-height:220px; max-width:150px;"></td>
+                <td><img src="/build/images/{{novel.cover}}" alt="{{ novel.title }}" style="max-height:150px; max-width:100px;"></td>
                 <td>
                     <a href="{{ path('novel_edit', {'id': novel.id}) }}" class="text-primary btn btn-secondary my-2">modifier</a>
-                    <a href="{{ path('novel_delete', {'id': novel.id}) }}" class="text-primary btn btn-success my-2">supprimer</a>
+                    {% include "novel/_delete_form.html.twig" %}
                 </td>
             </tr>
         {% else %}

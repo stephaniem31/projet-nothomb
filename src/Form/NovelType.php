@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class NovelType extends AbstractType
 {
@@ -40,12 +41,18 @@ class NovelType extends AbstractType
                 ]
             ])
             ->add('award', TextType::class, [
-                'label' => 'Récompense(s)'
+                'label' => 'Récompense(s)',
+                'required' => false
             ])
             ->add('quote', TextareaType::class, [
                 'label' => 'Citation'
             ])
-            ->add('cover');
+            ->add('coverFile', VichFileType::class, [
+                'label' => 'Couverture',
+                'required' => true,
+                'allow_delete'  => false, // not mandatory, default is true
+                'download_uri' => false, // not mandatory, default is true
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

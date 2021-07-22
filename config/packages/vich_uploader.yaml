@@ -1,0 +1,8 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+                cover_file:
+                        # Chemin vers le dossier de stockage
+                        upload_destination: '%upload_directory%'
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

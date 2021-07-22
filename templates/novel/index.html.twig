@@ -4,11 +4,11 @@
 
 {% block body %}
 
-<div class="container col-12">
+<div class="container col-12 mt-5">
     <div class="row">
 
         {% for novel in novels %}
-            <div class="col-12 col-md-6 col-lg-4 col-xxl-3">
+            <div class="card-group col-12 col-md-6 col-lg-4 col-xxl-3">
                 <div class="card shadow my-3">
                     <div class="d-flex justify-content-center mt-1">
                         <a href="{{ path("novel_show", { id: novel.id }) }}">

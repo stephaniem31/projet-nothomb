@@ -1,6 +1,6 @@
 <footer class="py-4 text-center bg-secondary">
     {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('app_logout') }}" class="text-decoration-none"><span class="text-primary">Déconnexion
+    <a href="{{ path('app_login') }}" class="d-none"><span class="text-primary">Admin
     </span></a>
     {% else %}
     <a href="{{ path('app_login') }}" class="text-decoration-none"><span class="text-primary">Admin

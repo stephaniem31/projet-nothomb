@@ -3,7 +3,7 @@
 {% block title %}{{ novel.title }}{% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container my-5">
     <div class="">
         <div class="d-flex">
             <img src="/build/images/{{novel.cover}}" alt="{{ novel.title }}" style="max-height:220px; max-width:150px;">
@@ -38,7 +38,7 @@
 
 </div>
 
-<a href="{{ path('novel_index') }}" class="text-secondary">
+<a href="{{ path('novel_index') }}" class="btn btn-secondary text-primary ms-3 mb-5">
     Retour à la liste des romans
 </a>
 {% endblock %}

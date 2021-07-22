@@ -1,21 +1,28 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top">
-<a href="{{ path('home_index') }}">
-<img src="/build/images/black-feather.png">
-</a> 
+	<a href="{{ path('home_index') }}">
+		<img src="/build/images/black-feather.png">
+	</a> 
   	<div class="container-fluid">
-	  <a href="{{ path('home_index') }}" class="text-decoration-none">
-	  	<span class="text-primary">L'œuvre d'Amélie Nothomb</span>
-	</a>
+	  	<a href="{{ path('home_index') }}" class="text-decoration-none">
+	  		<span class="text-primary">L'œuvre d'Amélie Nothomb</span>
+		</a>
     	<div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-      	<div class="navbar-nav ">
-        	<a class="nav-link active text-primary" aria-current="page" href="{{ path('home_index') }}">Accueil</a>
-        	<a class="nav-link text-primary" href="{{ path('novel_index') }}">Romans</a>
-        	<a class="nav-link text-primary" href="#">Nouvelles</a>
-        	<a class="nav-link text-primary me-5" href="#">Pièces de théâtre</a>
-			{% if is_granted('ROLE_ADMIN') %}
-        	<a class="nav-link text-primary me-5" href="{{ path('novel_update') }}">Gérer le contenu</a>
-			{% endif %}
-      	</div>
+			<div class="navbar-nav">
+				<a class="nav-link active text-primary" aria-current="page" href="{{ path('home_index') }}">Accueil</a>
+				<a class="nav-link text-primary" href="{{ path('novel_index') }}">Romans</a>
+				<a class="nav-link text-primary" href="#">Nouvelles</a>
+				<a class="nav-link text-primary me-5" href="#">Pièces de théâtre</a>
+				{% if is_granted('ROLE_ADMIN') %}
+				<a class="nav-link text-primary me-5" href="{{ path('novel_update') }}">Gérer le contenu</a>
+				{% else %}
+				<a class="nav-link text-secondary me-5">Gérer le contenu</a>	
+				{% endif %}
+      		</div>
     	</div>
+		<div class="d-flex justify-content-end">
+			{% if is_granted('ROLE_ADMIN') %}
+				<a  class="nav-link text-primary" href="{{ path('app_logout') }}">Déconnexion</a>
+			{% endif %}
+		</div>
   	</div>
 </nav>
