@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top">
 <a href="{{ path('home_index') }}">
 <img src="/build/images/black-feather.png">
 </a> 
@@ -12,6 +12,9 @@
         	<a class="nav-link text-primary" href="{{ path('novel_index') }}">Romans</a>
         	<a class="nav-link text-primary" href="#">Nouvelles</a>
         	<a class="nav-link text-primary me-5" href="#">Pièces de théâtre</a>
+			{% if is_granted('ROLE_ADMIN') %}
+        	<a class="nav-link text-primary me-5" href="{{ path('novel_update') }}">Gérer le contenu</a>
+			{% endif %}
       	</div>
     	</div>
   	</div>

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier{% endblock %}
+
+{% block body %}
+    <h1 class="my-5 text-center">Modifier les informations d'un roman</h1>
+
+    {{ include('novel/_form.html.twig', {'button_label': 'Confirmer'}) }}
+
+    <a href="{{ path('novel_index') }}" class="text-primary btn btn-secondary my-5 ms-3">Retour à la liste</a>
+
+{% endblock %}

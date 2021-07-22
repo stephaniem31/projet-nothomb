@@ -1,0 +1,76 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+<div class="container shadow card p-4 text-secondary bg-secondary">
+    {{ form_start(form) }}
+    <div class="card-body">
+        <form>
+            <div class="pl-lg-4">
+                <div class="row my-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.title, "Titre", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.title) }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.year, "Année de publication", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.year) }}
+                            </div>
+                        </div>
+                </div>
+                <div class="row my-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.summary, "Résumé", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.summary) }}
+                            </div>
+                        </div>
+            
+                </div>
+                <div class="row my-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.movie, "Adaptation au cinéma", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.movie) }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.play, "Adaptation au théâtre", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.play) }}
+                            </div>
+                        </div>
+                </div>
+                <div class="row my-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.award, "Récompense(s)", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.award) }}
+                            </div>
+                        </div>
+                </div>
+                <div class="row my-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.quote, "Citation", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.quote) }}
+                            </div>
+                        </div>
+                </div>
+                <div class="row my-3">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                {{ form_label(form.cover, "Couverture", {'label_attr': {'class': 'form-control-label text-primary'}}) }}
+                                {{ form_widget(form.cover) }}
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary text-secondary mt-5 fw-bold">{{ button_label|default('Confirmer') }}</button>
+            </div>
+        </form>
+        {{ form_end(form) }}
+    </div>
+</div>

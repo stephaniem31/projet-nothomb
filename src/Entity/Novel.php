@@ -57,6 +57,7 @@ class Novel
      */
     private $cover;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -157,4 +158,5 @@ class Novel
 
         return $this;
     }
+
 }

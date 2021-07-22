@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Novel{% endblock %}
+
+{% block body %}
+    <h1 class="my-5 text-center">Ajouter un roman</h1>
+    {{ include('novel/_form.html.twig') }}
+
+    <a href="{{ path('novel_index') }}">back to list</a>
+{% endblock %}
