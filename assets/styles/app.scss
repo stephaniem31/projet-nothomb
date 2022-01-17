@@ -1,11 +1,82 @@
-@import 'variables.scss';
+@import "variables.scss";
+@import "~bootstrap/scss/bootstrap";
 
 body {
-    background-color: $primary;
+  background-color: $primary;
 }
 
-.content {
-    min-height: calc(100vh - 152px);
+.text {
+  text-align: justify;
 }
 
-@import "~bootstrap/scss/bootstrap";
+.footer {
+  height: 66px;
+}
+
+.login {
+  min-height: calc(100vh - 180px);
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 45px;
+  right: 20px;
+  display: none;
+  z-index: 1000;
+}
+
+@media screen and (min-width: 320px) and (max-width: 379px) {
+  #navbar {
+    width: 75%;
+    img {
+      height: 28px;
+      margin-left: 5px;
+    }
+    span {
+      font-size: initial;
+      margin-left: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 411px) {
+  #navbar {
+    width: 81%;
+    margin-right: 0 !important;
+    img {
+      height: 28px;
+      margin-left: 5px;
+    }
+    span {
+      font-size: initial;
+      margin-left: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 412px) and (max-width: 460px) {
+  #navbar {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width: 640px) {
+  #navbar {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  #navbar {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 811px) {
+  #navbar {
+    width: 68%;
+  }
+  .w-md-50 {
+    width: 50% !important;
+  }
+}

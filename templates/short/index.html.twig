@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les contes et nouvelles{% endblock %}
+
+{% block body %}
+<h1 class="text-success text-center mt-5 display-3 fw-bold">Les contes et nouvelles</h1>
+<div class="container col-12 mt-5">
+    <div class="row">
+        {% for short in shorts %}
+            <div class="card-group col-12 col-md-6 col-lg-4 col-xxl-3">
+                <div class="card shadow my-3">
+                    <h3 class="text-center text-decoration-underline fw-bold mt-2 mb-4">{{short.title}}</h3>
+                    <div class="d-flex justify-content-center mt-1">
+                        <a class="stretched-link" href="{{ path("short_show", { id: short.id }) }}"></a>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-center">
+                            <em>"{{ short.quote }}"</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

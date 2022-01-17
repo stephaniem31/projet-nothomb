@@ -21,7 +21,7 @@ class NovelController extends AbstractController
     public function index(NovelRepository $novelRepository): Response
     {
         return $this->render('novel/index.html.twig', [
-            'novels' => $novelRepository->findAll(),
+            'novels' => $novelRepository->findBy([], ['year' => 'ASC']),
         ]);
     }
 

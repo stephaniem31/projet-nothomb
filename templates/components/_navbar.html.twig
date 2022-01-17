@@ -1,28 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary sticky-top">
-	<a href="{{ path('home_index') }}">
-		<img src="/build/images/black-feather.png">
-	</a> 
   	<div class="container-fluid">
-	  	<a href="{{ path('home_index') }}" class="text-decoration-none">
-	  		<span class="text-primary">L'œuvre d'Amélie Nothomb</span>
+	  	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a href="{{ path('home_index') }}" class="navbar-brand d-flex justify-content-start" id="navbar">
+			<img src="/build/images/black-feather.png">
+			<span class="text-primary">L'œuvre d'Amélie Nothomb</span>
 		</a>
-    	<div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-			<div class="navbar-nav">
-				<a class="nav-link active text-primary" aria-current="page" href="{{ path('home_index') }}">Accueil</a>
-				<a class="nav-link text-primary" href="{{ path('novel_index') }}">Romans</a>
-				<a class="nav-link text-primary" href="#">Nouvelles</a>
-				<a class="nav-link text-primary me-5" href="#">Pièces de théâtre</a>
-				{% if is_granted('ROLE_ADMIN') %}
-				<a class="nav-link text-primary me-5" href="{{ path('novel_update') }}">Gérer le contenu</a>
-				{% else %}
-				<a class="nav-link text-secondary me-5">Gérer le contenu</a>	
+		<div class="collapse navbar-collapse d-flex-md ms-lg-5 ms-md-2" id="navbarNav">
+			<ul class="navbar-nav d-flex justify-content-center w-100">
+				{% if is_granted('ROLE_ADMIN')%}
+					<li class="flex-fill"></li>
 				{% endif %}
-      		</div>
-    	</div>
-		<div class="d-flex justify-content-end">
-			{% if is_granted('ROLE_ADMIN') %}
-				<a  class="nav-link text-primary" href="{{ path('app_logout') }}">Déconnexion</a>
-			{% endif %}
+				<li class="navbar-item">
+					<a class="nav-link active text-primary hover-shadow" aria-current="page" href="{{ path('home_index') }}">Accueil</a>
+				</li>
+				<li class="navbar-item">
+					<a class="nav-link text-primary" href="{{ path('novel_index') }}">Romans</a>
+				</li>
+				<li class="navbar-item">
+					<a class="nav-link text-primary" href="{{ path('short_index') }}">Contes et Nouvelles</a>
+				</li>
+				{% if is_granted('ROLE_ADMIN') %}
+					<li class="flex-fill"></li>
+					<li class="navbar-item ms-5 d-none d-lg-flex">
+						<a class="nav-link text-primary me-5" href="{{ path('novel_update') }}">Gérer le contenu</a>
+						<a  class="nav-link text-primary text-end" href="{{ path('app_logout') }}">Déconnexion</a>	
+					</li>
+			</ul>
+				{% else %}
+					<li class="navbar-item">
+						<a class="nav-link text-primary mx-5 d-none d-lg-flex" href="#"></a>
+					</li>
+					<li class="navbar-item">
+						<a class="nav-link text-primary mx-5 d-none d-lg-flex" href="#"></a>
+					</li>
+					<li class="navbar-item">
+						<a class="nav-link text-primary mx-5 d-none d-lg-flex" href="#"></a>
+					</li>
+			</ul>
+				{% endif %}
 		</div>
-  	</div>
+	</div>
 </nav>

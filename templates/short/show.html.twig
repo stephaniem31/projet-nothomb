@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ short.title }}{% endblock %}
+
+{% block body %}
+<div class="login container my-4">
+    <div class="">
+        <h1 class="text-center text-decoration-underline fw-bold">{{ short.title }}</h1>
+    </div>
+    <div class="">
+        <span class="text-decoration-underline fw-bold text-success">Résumé : </span>
+        <p class="text mb-4">{{short.summary}}</p>
+
+    <span class="text-decoration-underline fw-bold text-success">Publication : </span>
+        <p class="mb-4">
+            {% if short.count == true %}
+            Ce conte a été publié
+            {% else %}
+            Cette nouvelle a été publiée
+            {% endif %}
+            dans <em>{{short.publication}}</em> en {{short.year}}.</p>
+    </div>
+</div>
+<a href="{{ path('short_index') }}" class="btn btn-secondary text-primary ms-1 ms-lg-3 my-3">
+    Retour à la liste des contes et nouvelles
+</a>
+{% endblock %}
